@@ -8,8 +8,14 @@ function createGrid(gridSize){
         for(let j=0; j<gridSize; j++){
             let cell = document.createElement("div");
             cell.classList.add("cell");
+            cell.addEventListener("mouseover", changeColour);
             row.appendChild(cell);
         }
         container.appendChild(row);
     }
+}
+
+// callback function for mouseover event listener
+function changeColour(e){
+    e.target.classList.add("hovered");
 }
