@@ -4,6 +4,8 @@ const totalSpace = 540;
 const button = document.querySelector("button");
 button.addEventListener("click", makeNewGrid);
 
+let opacity = 0.1;
+
 createGrid(16);
 
 function createGrid(gridSize){
@@ -31,6 +33,10 @@ function changeColour(e){
     const blue = Math.floor(Math.random()*256);
 
     e.target.style["background-color"] = `rgb(${red}, ${green}, ${blue})`;
+    e.target.style["opacity"] = opacity;
+    if (opacity < 1){
+        opacity += 0.1;
+    }
 }
 
 function makeNewGrid(){
