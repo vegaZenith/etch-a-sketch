@@ -26,7 +26,11 @@ function createGrid(gridSize){
 
 // callback function for mouseover event listener
 function changeColour(e){
-    e.target.classList.add("hovered");
+    const red = Math.floor(Math.random()*256);
+    const green = Math.floor(Math.random()*256);
+    const blue = Math.floor(Math.random()*256);
+
+    e.target.style["background-color"] = `rgb(${red}, ${green}, ${blue})`;
 }
 
 function makeNewGrid(){
